@@ -1,9 +1,14 @@
+import { users } from "../data/data.js";
+
 const Exercise1 = () => {
-  return (
-    <ul>
-      <li>ここに適切なリストを表示してください</li>
-    </ul>
-  );
+  const userItems = users.map((user) => (
+    <li key={user.id}>
+      {user.name}
+      {user.age >= 18 && "（成人）"}
+    </li>
+  ));
+
+  return <ul>{userItems}</ul>;
 };
 
 export default Exercise1;
